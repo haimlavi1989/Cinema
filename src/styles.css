@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.btn-outline-secondary:hover {
+    background-color: #414042;
+    border-color: #414042;  
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
+    background-color: #414042;
+    border-color: #414042;
+}
+
+.btn-outline-secondary.left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-outline-secondary.right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
+

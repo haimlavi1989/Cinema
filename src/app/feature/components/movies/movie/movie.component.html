@@ -1,0 +1,21 @@
+<div class="movie">
+    <div class="movieCard">
+        <div class="flipcard h">
+            <div class="front">
+                <img src="{{ movie.Poster }}" alt="{{ movie.Title }}">
+            </div>
+            <div class="back">
+                <div class="headers">
+                    <h5><b>{{ movie.Title }}</b></h5> 
+                    <h6>{{ movie.Year }}</h6>
+                </div> 
+                <p>{{ movie.Plot }}</p>
+                <div class="buttons">
+                    <button type="button" class="btn btn-sm btn-outline-secondary left" (click)="onEdite()">Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary right" (click)="onDelete()">Delete</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>    
+

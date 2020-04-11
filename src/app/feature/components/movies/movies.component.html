@@ -1,0 +1,9 @@
+<div class="movies">
+  <div class="add-new" (click)="onAddMovie()"><img src="/assets/images/movie-add-icon.png"></div>
+  <app-movie *ngFor="let movie of movies;" [movie]="movie"></app-movie>
+</div>
+<app-confirmation-dialog *ngIf="showDeleteMoveDialog" 
+[message]="dialogMessage" >
+</app-confirmation-dialog>
+<app-modify-movie *ngIf="showModifyMoveForm"
+[movie]="modifiedMovie"></app-modify-movie>

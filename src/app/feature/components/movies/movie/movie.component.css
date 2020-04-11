@@ -1,0 +1,80 @@
+.movie {
+    display: inline-block;
+    margin: 1%;
+}
+.flipcard {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    perspective: 200px;
+  }
+
+  .flipcard .front img {
+    width: inherit;
+    height: inherit;
+  }
+
+  .flipcard .back {
+    padding: 2%;
+    position: relative;
+    border: 1px solid #414042;
+    border-radius: 1px;
+  }
+
+  .flipcard .back p {
+    text-align: initial;
+  }
+  
+  .flipcard .back .headers {
+    text-align: center;
+  }
+
+  .movie .buttons {
+    bottom: 2%;
+    position: absolute;
+    left: 33.3%; 
+  }
+
+  .flipcard.v:hover .front, .flipcard.v.flip .front{
+    transform: rotateX(180deg);
+  }
+  .flipcard.v:hover .back, .flipcard.v.flip .back{
+    transform: rotateX(0deg);
+  }
+  .flipcard.v .back{
+    transform: rotateX(-180deg);
+  }
+  .flipcard.h:hover .front, .flipcard.h.flip .front{
+    transform: rotateY(180deg);
+  }
+  .flipcard.h:hover .back, .flipcard.h.flip .back{
+    transform: rotateY(0deg);
+  }
+  .flipcard.h .back{
+    transform: rotateY(-180deg);
+  }
+  .flipcard .front, .flipcard .back
+  {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: all 0.4s ease-in;
+    backface-visibility: hidden;
+  }
+
+  .back::after {
+    content: "";
+    background-image: url(/assets/images/images.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    opacity: 0.09;
+    top: 36px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+    z-index: -1;
+  } 
+  

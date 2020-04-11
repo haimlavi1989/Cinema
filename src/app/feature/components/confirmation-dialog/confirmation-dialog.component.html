@@ -1,0 +1,18 @@
+<div class="confirmation-dialog">
+    <div class="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+              <span class="close" (click)="buttonChoice(false)">&times;</span>
+            </div>
+            <div class="modal-body">
+              <p>{{ message }}</p>
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="buttonChoice(true)">Yes</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="buttonChoice(false)">No</button>
+                  </div>
+            </div>
+          </div>
+    </div>
+</div>

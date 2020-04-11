@@ -1,0 +1,90 @@
+<div class="modifyMovie">
+    <div class="modifyMovie-modal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+              <span class="close" (click)="exitedit()">&times;</span>
+              <h2>{{ modalTitle }}</h2>
+            </div>
+      
+            <div class="modal-body">
+              <div class="container">
+                <form [formGroup]="movieFormGroup" (ngSubmit)="onSubmit()">           
+                     <div class="form-group">
+                        <label for="Title">Title:</label>
+                        <input type="text" name="title" formControlName="title">
+                        <div class="help-block">
+                          <span *ngIf="title.errors?.required && 
+                           (title.dirty || title.touched)">
+                            {{ errorEmptyFields }} 
+                          </span>
+                        </div>
+                      </div>
+                 
+                      <div class="form-group">
+                        <label for="Year">Year:</label>
+                        <input type="text" name="year" formControlName="year">
+                        <div class="help-block">
+                          <span *ngIf="year.errors?.required && 
+                           (year.dirty || year.touched)">
+                            {{ errorEmptyFields }} 
+                          </span>
+                          <span *ngIf="movieFormGroup.get('year').errors?.minlength">
+                            Min length is {{ yearMinMax[0] }}.
+                          </span>
+                          <span *ngIf="movieFormGroup.get('year').errors?.maxlength">
+                            Max length is {{ yearMinMax[1] }}.
+                          </span>
+                          <span *ngIf="movieFormGroup.get('year').errors?.pattern">
+                            Valid format is YYYY Or YYYY-YYYY.
+                          </span>
+                        </div> 
+                      </div>
+          
+                      <div class="form-group">
+                          <label for="Poster">Poster:</label>
+                          <input type="text" name="poster" formControlName="poster">
+                          <div class="help-block">
+                            <span *ngIf="poster.errors?.required
+                            && (poster.dirty || poster.touched)">
+                              {{ errorEmptyFields }} 
+                            </span>
+                            <span *ngIf="movieFormGroup.get('poster').errors?.pattern">
+                              Only https url is allowed.
+                            </span>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="Plot">Plot:</label>
+                        <textarea name="plot" formControlName="plot"></textarea>
+                        <div class="help-block">
+                          <span *ngIf="plot.errors?.required
+                           && (plot.dirty || plot.touched)">
+                            {{ errorEmptyFields }} 
+                          </span>
+                          <span *ngIf="movieFormGroup.get('plot').errors?.minlength">
+                            Min length is {{ plotMinMax[0] }}.
+                          </span>
+                          <span *ngIf="movieFormGroup.get('plot').errors?.maxlength">
+                            Max length is {{ plotMinMax[1] }}.
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="btn-group">
+                           <div>
+                             <button type="submit" class="btn btn-sm btn-outline-secondary" 
+                              [disabled]="!movieFormGroup.valid">{{ submitButtonText }}</button>
+                           </div>
+                           <button type="button" class="btn btn-sm btn-outline-secondary" 
+                            (click)="exitedit()">Cancel</button>
+                        </div>
+                      </div>
+                </form>      
+              </div>        
+            </div>          
+          </div>
+      </div>     
+</div>
