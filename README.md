@@ -2,9 +2,12 @@
 `crud` movies aplication
 Built using modern technologies: `Angular`
 
-## Demo aplication
+<p align="center">
+<img src="https://drive.google.com/uc?export=view&id=1I9re8CmPiyD1ILo-6WB2uC-p8tf5-QZe">
+</p>  
 
-The aplication is served at **https://haimlavi1989.github.io/Cinema/**
+## Demo aplication
+The aplication is served **<a href="https://haimlavi1989.github.io/Cinema">here</a>**
 
 ## Installation and Running the App
 
